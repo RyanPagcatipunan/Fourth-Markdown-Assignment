@@ -1,1 +1,37 @@
 ## 4th Markdown Assignment
+```{r setup, include = FALSE}
+
+library(ggplot2)
+library(tidyverse)
+library(data.table)
+library(car)
+library(matlib)
+library(scatterplot3d)
+
+
+knitr::opts_chunk$set(
+  error = TRUE,
+  fig.align = 'center' ,
+  out.width = "90%" ,
+  warning = FALSE,
+  message = FALSE,
+  
+  size = "small" ,
+  tidy = FALSE
+)
+```
+
+
+### Intro
+
+
+### Methodology
+
+
+### Results
+
+
+### Discussions
+
+
+### Conclusion
