@@ -47,7 +47,84 @@ Interviews were conducted within the two provinces in late 2015. 78 villages wer
 
 
 ### Results
+```{r, echo=FALSE}
+Table <- read.csv("MainData.csv")
+print(Table)
+```
 
+We are going to convert the wealth group into numerical values, where: 
+
+Higher = 3, Middle = 2, Lower = 1
+
+#### Urban
+```{r, echo=FALSE}
+UrbanData <- read.csv("Linear.csv")
+UrbanModel <- lm(UrbanData$Battery ~ UrbanData$Wealth.Group + UrbanData$Grid)
+UrbanYMatrix <- as.matrix(read.csv("YMatrix.csv"))
+UrbanXMatrix <- as.matrix(read.csv("XMatrix.csv"))
+TUrbanXMatrix <- t(UrbanXMatrix)
+summary(UrbanModel)
+anova(UrbanModel)
+plot(UrbanData)
+```
+This will have an equation with
+
+$\beta_0 = 96.52298$
+
+$\beta_1 = -2.66927$
+
+$\beta_2 = -0.83820$
+$$\hat{y} = 96.52298 - 2.66927X_1 - 0.83820X_2$$
+
+Testing for the significance of the regression with
+$$H_0: \beta_1 = \beta_1 = 0 $$
+$$H_1: \beta_1 or \beta_1 \neq 0 $$
+$$F_0 = \frac{SS_R/k}{SS_E/(n-p)}=\frac{MS_R}{MS_E} $$
+$F_0 = 494.2670807$
+
+$f_{0.05,2,6} = 5.1433$
+
+$494.2670807 > 5.1433$
+
+We reject $H_o$  but further testing is needed to ensure that both will have a significant effect on the outcome.
+
+
+We can test for each individual regression coefficient to see each significance using:
+
+$$H_0: \beta_j = \beta_{j0}$$
+$$H_1: \beta_j \neq \beta_{j0}$$
+
+$$ T_0 = \frac{\hat{\beta_j}-\beta_{j0}}{\sqrt{\sigma^{2}C_{jj}}}$$
+
+$$C_{jj} = (X'X)^{-1}$$
+
+#### C = 
+
+```{r, echo=FALSE}
+C = inv((TUrbanXMatrix%*%UrbanXMatrix))
+A = (TUrbanXMatrix%*%UrbanYMatrix)
+B = C%*%A
+T01 = (-2.6693287)/sqrt(8.0*0.16911394)
+T02 = (-0.8381726)/sqrt(8.0*0.00009168)
+print(C)
+```
+
+For $\beta_1$ when $\beta_2 = 0$, $T_0 = -2.294919$ 
+
+$|t_0| = 2.2949191 < t_{0.025,6} = 2.447$
+
+$P(t_0) = 0.061529 > \alpha = 0.05$
+
+We fail reject $H_0$ for Wealth Group
+
+
+For $\beta_2$ $\beta_1 = 0$, $T_0 = -30.94932$ 
+
+$|t_0| = 30.94932 > t_{0.025,6} = 2.447$
+
+$P(t_0) = 0.00001 < \alpha = 0.05$
+
+We reject $H_0$ for Grid usage
 
 ### Discussions
 The primary concern is if there is a relationship in the household's income to its source of electricity. 
@@ -57,3 +134,24 @@ The results gathered from the study, through interview, states that there is ind
 It also shows that the area's level of urbanization has a significant influence in the household's source of electricity regardless of the household's social class; the most probable reasons for this are the availability of the source in the area, location of the area, and the reliability of the energy. Regardless, grid electricity as energy source still favors those of households that have a higher financial standing.
 
 ### Conclusion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

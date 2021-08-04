@@ -1,0 +1,10 @@
+Place,Wealth Group,Grid,Battery
+Urban,Higher,97,3
+,Middle,96,14
+,Lower,86,21
+Rural electrified,Higher,88,18
+,Middle,71,29
+,Lower,70,36
+Rural non-electrified,Higher,13,78
+,Middle,14,80
+,Lower,11,84
