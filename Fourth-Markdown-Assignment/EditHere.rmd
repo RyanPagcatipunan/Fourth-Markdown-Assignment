@@ -28,10 +28,32 @@ As households in developing countries become more financially stable, the househ
 ### Methodology
 
 
+
+#### Information about the origin of data
+
+The data was collected from two provinces of Cambodia. These provinces are the province of Pursat and the province of Kampong Chan. 
+Pursat is located in western Cambodia and is filled with forests, local wildlife sanctuaries, fertile food plains and a lake with fisheries.
+Kampong Chan is located in central Cambodia and is mostly agricultural lowlands with a small forest to the north. This province has a higher population and is wealthier than Pursat.
+
+#### How the data was taken
+
+A multistage sampling was used to collect the data. The determinants were province, level of urbanization and access to electricity.
+Province refers to which province the household comes from and if they belong from either the upper class, middle class or lower class.
+Level of urbanization refers to the fact if the household is in a rural or urban community.
+Access to electricity refers if the household uses batteries or they are connected to the electrical grid.
+970 households were used for the entire research. 875 households were labelled as rural and 95 for urban. From these urban and rural households, 309 were lower class, 405 were middle class and 256 were higher class. Out of the 970 households, 669 households were electrified and connected to the electrical grid and 301 were not. If the household was earning less than 5,000 USD per month, they are considered low class. If between 5,500 and 18,000 USD, they are considered middle class. The household is considered upperclass if they earn more than 18,00 USD.
+Interviews were conducted within the two provinces in late 2015. 78 villages were a part of these interviews. The interviewers asked questions about socioeconomic characteristics of their households, livelihood strategies, energy usage, access to the natural resources and if there were changes they saw within their community  
+
+
+
 ### Results
 
 
 ### Discussions
+The primary concern is if there is a relationship in the household's income to its source of electricity. 
 
+The results gathered from the study, through interview, states that there is indeed a relationship to the household's financial income to its source of electricity, as it can be seen from the figure that the wealthier households, or the higher the household's financial income, tend to have a higher percentage of using grid electricity, compared to the other two class, no matter the area. 
+
+It also shows that the area's level of urbanization has a significant influence in the household's source of electricity regardless of the household's social class; the most probable reasons for this are the availability of the source in the area, location of the area, and the reliability of the energy. Regardless, grid electricity as energy source still favors those of households that have a higher financial standing.
 
 ### Conclusion
