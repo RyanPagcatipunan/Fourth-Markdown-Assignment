@@ -23,7 +23,7 @@ knitr::opts_chunk$set(
 
 
 ### Intro
-
+As households in developing countries become more financially stable, the household will transition to more upscale sources of energy (energy ladder concept). The following multiple linear regression model will test this concept by measuring the relationship between the economic status of a household with the source of their power or electricity. 
 
 ### Methodology
 
