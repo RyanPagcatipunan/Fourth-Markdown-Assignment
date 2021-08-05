@@ -52,41 +52,51 @@ Table <- read.csv("MainData.csv")
 print(Table)
 ```
 
-We are going to convert the wealth group into numerical values, where: 
+We are going to convert the wealth group and Place into numerical values, where: 
 
 Higher = 3, Middle = 2, Lower = 1
 
-#### Urban
+Urban = 3, Rural electrified = 2, Rural non-electrified = 1
+
+#### Place
 ```{r, echo=FALSE}
-UrbanData <- read.csv("Linear.csv")
-UrbanModel <- lm(UrbanData$Battery ~ UrbanData$Wealth.Group + UrbanData$Grid)
-UrbanYMatrix <- as.matrix(read.csv("YMatrix.csv"))
-UrbanXMatrix <- as.matrix(read.csv("XMatrix.csv"))
-TUrbanXMatrix <- t(UrbanXMatrix)
-summary(UrbanModel)
-anova(UrbanModel)
-plot(UrbanData)
+Data <- read.csv("Linear.csv")
+Model <- lm(Data$Place ~ Data$Battery + Data$Grid)
+YMatrix <- as.matrix(read.csv("YMatrix.csv"))
+XMatrix <- as.matrix(read.csv("XMatrix.csv"))
+TXMatrix <- t(XMatrix)
+summary(Model)
+anova(Model)
+plot(Data)
 ```
 This will have an equation with
 
-$\beta_0 = 96.52298$
+$\hat{\beta_0} = 4.87061$
 
-$\beta_1 = -2.66927$
+$\hat{\beta_1} = -0.22429$
 
-$\beta_2 = -0.83820$
-$$\hat{y} = 96.52298 - 2.66927X_1 - 0.83820X_2$$
+$\hat{\beta_2} = -0.01249$
+
+$\hat{\beta_3} = 0.01249$
+$$\hat{y} = 4.87061 - 0.22429X_1 - 0.04126X_2 - 0.01249X_3$$
 
 Testing for the significance of the regression with
 $$H_0: \beta_1 = \beta_1 = 0 $$
-$$H_1: \beta_1 or \beta_1 \neq 0 $$
+$$H_1: \beta_1 or \beta_2 or \beta_3 \neq 0 $$
 $$F_0 = \frac{SS_R/k}{SS_E/(n-p)}=\frac{MS_R}{MS_E} $$
-$F_0 = 494.2670807$
+```{r, echo=FALSE}
+MSR <- (5.1981+0.0500)/2
+MSE <- 0.1253
+F0 <- MSR/MSE
+```
+
+$F_0 = 20.94214$
 
 $f_{0.05,2,6} = 5.1433$
 
-$494.2670807 > 5.1433$
+$20.94214 > 5.1433$
 
-We reject $H_o$  but further testing is needed to ensure that both will have a significant effect on the outcome.
+We reject $H_o$, There is a  significant relationship to place, wealth group, battery, and grid but further testing is required to know if all have the same conclusion. 
 
 
 We can test for each individual regression coefficient to see each significance using:
@@ -101,30 +111,32 @@ $$C_{jj} = (X'X)^{-1}$$
 #### C = 
 
 ```{r, echo=FALSE}
-C = inv((TUrbanXMatrix%*%UrbanXMatrix))
-A = (TUrbanXMatrix%*%UrbanYMatrix)
+C = inv((TXMatrix%*%XMatrix))
+A = (TXMatrix%*%YMatrix)
 B = C%*%A
-T01 = (-2.6693287)/sqrt(8.0*0.16911394)
-T02 = (-0.8381726)/sqrt(8.0*0.00009168)
+T01 = (-0.00211)/sqrt(0.1253*0.01105906)
+T02 = (0.01999)/sqrt(0.1253*0.00799954)
 print(C)
 ```
 
-For $\beta_1$ when $\beta_2 = 0$, $T_0 = -2.294919$ 
+For $\beta_1$ when $\beta_2 = 0$, $T_0 = -0.05668235$ 
 
-$|t_0| = 2.2949191 < t_{0.025,6} = 2.447$
+$|t_0| = 0.05668235 < t_{0.025,6} = 2.447$
 
-$P(t_0) = 0.061529 > \alpha = 0.05$
+$P(t_0) = 0.956702 > \alpha = 0.05$
 
-We fail reject $H_0$ for Wealth Group
+We fail to reject $H_0$ for Battery usage
 
+*
 
-For $\beta_2$ $\beta_1 = 0$, $T_0 = -30.94932$ 
+For $\beta_2$ when $\beta_1 = 0$, $T_0 = 0.6314003$ 
 
-$|t_0| = 30.94932 > t_{0.025,6} = 2.447$
+$|t_0| = 0.6314003 < t_{0.025,6} = 2.447$
 
-$P(t_0) = 0.00001 < \alpha = 0.05$
+$P(t_0) = 0.55106 > \alpha = 0.05$
 
-We reject $H_0$ for Grid usage
+We fail to reject $H_0$ for Grid usage
+
 
 ### Discussions
 The primary concern is to see if there is a relationship of a household having a battery as a source of electricity to its wealth group and grid as source.
