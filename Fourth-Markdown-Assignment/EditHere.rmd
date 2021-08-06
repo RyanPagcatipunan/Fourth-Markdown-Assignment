@@ -21,6 +21,7 @@ knitr::opts_chunk$set(
 )
 ```
 
+## Group 1 (Agbayani, Cu, Dizon, Pagcatipunan)
 
 ### Intro
 As households in developing countries become more financially stable, the household will transition to more upscale sources of energy (energy ladder concept). The following multiple linear regression model will test this concept by measuring the relationship between where the household are located with the source of their power or electricity. 
@@ -43,6 +44,16 @@ Level of urbanization refers to the fact if the household is in a rural or urban
 Access to electricity refers if the household uses batteries or they are connected to the electrical grid.
 970 households were used for the entire research. 875 households were labelled as rural and 95 for urban. From these urban and rural households, 309 were lower class, 405 were middle class and 256 were higher class. Out of the 970 households, 669 households were electrified and connected to the electrical grid and 301 were not. If the household was earning less than 5,000 USD per month, they are considered low class. If between 5,500 and 18,000 USD, they are considered middle class. The household is considered upperclass if they earn more than 18,00 USD.
 Interviews were conducted within the two provinces in late 2015. 78 villages were a part of these interviews. The interviewers asked questions about socioeconomic characteristics of their households, livelihood strategies, energy usage, access to the natural resources and if there were changes they saw within their community  
+
+
+Here is the data that was collected in a form of a graph
+
+
+
+
+![Graphed data](C:\Users\RyanP\Documents\GitHub\Fourth-Markdown-Assignment\Fourth-Markdown-Assignment\Neededgraph.png)
+
+
 
 
 
@@ -141,6 +152,18 @@ The primary concern is to see if there is a relationship with the place where th
 The results gathered from the study, through investigation, states that there is a significant relationship to the place where the household is to the source of their electricity. This can be seen in the first test which rejected the null hypothesis. On the other hand, the second test showed a different result with both battery and grid failing to reject the null hypothesis.
 
 It shows, however, that the area's level of urbanization has a significant influence in the household's source of electricity regardless of the household's social class; the most probable reasons for this are the availability of the source in the area, location of the area, and the reliability of the energy.
+
+
+
+
+
+
+
+
+
+### Source
+
+Mika, K., Minna, M., Noora, V., Jyrki, L., Jari, K.-oja, Anna, A., Eliyan, C., Dany, V., Maarit, K., &amp; Nicholas, H. (2021). Situation analysis of energy use and consumption in CAMBODIA: HOUSEHOLD access to energy. Environment, Development and Sustainability. https://doi.org/10.1007/s10668-021-01443-8 
 
 
 
