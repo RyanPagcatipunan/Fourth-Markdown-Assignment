@@ -23,7 +23,7 @@ knitr::opts_chunk$set(
 
 
 ### Intro
-As households in developing countries become more financially stable, the household will transition to more upscale sources of energy (energy ladder concept). The following multiple linear regression model will test this concept by measuring the relationship between the economic status of a household with the source of their power or electricity. 
+As households in developing countries become more financially stable, the household will transition to more upscale sources of energy (energy ladder concept). The following multiple linear regression model will test this concept by measuring the relationship between where the household are located with the source of their power or electricity. 
 
 ### Methodology
 
@@ -53,8 +53,6 @@ print(Table)
 ```
 
 We are going to convert the wealth group and Place into numerical values, where: 
-
-Higher = 3, Middle = 2, Lower = 1
 
 Urban = 3, Rural electrified = 2, Rural non-electrified = 1
 
@@ -96,8 +94,7 @@ $f_{0.05,2,6} = 5.1433$
 
 $20.94214 > 5.1433$
 
-We reject $H_o$, There is a  significant relationship to place, wealth group, battery, and grid but further testing is required to know if all have the same conclusion. 
-
+We reject $H_o$, There is a  significant relationship to place, battery, and grid but further testing is required to know if both battery and grid has the same conclusion. 
 
 We can test for each individual regression coefficient to see each significance using:
 
@@ -138,15 +135,12 @@ $P(t_0) = 0.55106 > \alpha = 0.05$
 We fail to reject $H_0$ for Grid usage
 
 
-### Discussions
-The primary concern is to see if there is a relationship of a household having a battery as a source of electricity to its wealth group and grid as source.
+### Discussions and Conclusion
+The primary concern is to see if there is a relationship with the place where they are staying by looking at what type of electricity are they using whether it is using the grid or battery.
 
-The results gathered from the study, through investigation, states that there is no relationship to the household's financial income to its source of electricity, as it can be seen from the tests above that the households' wealth group is not significant and cannot be regarded as a determining factor. 
+The results gathered from the study, through investigation, states that there is a significant relationship to the place where the household is to the source of their electricity. This can be seen in the first test which rejected the null hypothesis. On the other hand, the second test showed a different result with both battery and grid failing to reject the null hypothesis.
 
-It shows, however, that the area's level of urbanization has a significant influence in the household's source of electricity regardless of the household's social class; the most probable reasons for this are the availability of the source in the area, location of the area, and the reliability of the energy. Regardless, battery as energy source still favors those of households that have a lower financial standing.
-
-### Conclusion
-
+It shows, however, that the area's level of urbanization has a significant influence in the household's source of electricity regardless of the household's social class; the most probable reasons for this are the availability of the source in the area, location of the area, and the reliability of the energy.
 
 
 
